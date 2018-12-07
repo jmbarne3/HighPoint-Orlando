@@ -1,0 +1,40 @@
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.site-main {
+  flex: 1 0 auto;
+}
+
+.screen-reader-text {
+  @include sr-only();
+}
+
+.skip-navigation {
+  @include sr-only();
+  @include sr-only-focusable();
+
+  &:focus {
+    left: $spacer;
+    position: absolute;
+    top: calc(#{$header-height} + #{$spacer});
+    z-index: 4;
+  }
+}
+
+.media-background {
+  height: calc(100% + 1px);
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: calc(100% + 1px);
+  z-index: -1;
+}
+
+.object-fit-cover {
+  object-fit: cover;
+}
+
+

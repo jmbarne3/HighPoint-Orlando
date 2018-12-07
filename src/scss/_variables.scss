@@ -1,0 +1,58 @@
+$fa-font-path: '../fonts/font-awesome';
+
+
+$enable-caret: true;
+$enable-rounded: true;
+$enable-shadows: true;
+$enable-gradients: true;
+$primary: #ee801e;
+$secondary: #d6d1ce;
+$black: #242424;
+$font-family-sans-serif: 'Montserrat', sans-serif;
+$headings-font-family: 'Oswald', sans-serif;
+$condensend-font-family: 'Open Sans Condensed', sans-serif;
+$nav-link-padding-y: .5rem;
+$spacer: 1rem;
+$navbar-padding-y: ($spacer * .5);
+$navbar-padding-x: ($spacer * 1.5);
+$navbar-light-color: $black;
+$navbar-light-hover-color: $primary;
+$navbar-light-active-color: $primary;
+
+
+$line-height-base: 1.65;
+
+$blockquote-small-color:  inherit;
+$blockquote-font-size:    1.1rem;
+$blockquote-font-size-md: 1.875rem;
+$font-serif-blockquote-size:         $blockquote-font-size * 1.2;
+$font-serif-blockquote-size-md:      $blockquote-font-size-md * 1.14;
+$font-slab-serif-blockquote-size:    $blockquote-font-size * 1.25;
+$font-slab-serif-blockquote-size-md: $blockquote-font-size-md * 1.2;
+$font-serif-blockquote-line-height:  1.4;
+$blockquote-line-height:             1.6;
+
+$small-font-size: 70% !default;
+
+$header-img-xs-width: 575px;
+$header-img-xs-height: 575px;
+
+$nav-height: 4.35rem;
+$nav-height-md: 6rem;
+$nav-text-shadow: 0 1px 0 rgba(0, 0, 0, .25);
+
+$text-shadow-hard-length: 0 1px 0;
+$text-shadow-soft-length: 0 0 .2em;
+$text-shadow-color: rgba(0, 0, 0, 1);
+$text-shadow-color-inverse: rgba(255, 255, 255, .75);
+
+$box-shadow-hard-length: $text-shadow-hard-length;
+$box-shadow-soft-length: .5em .5em 1em;
+$box-shadow-color: rgba(0, 0, 0, .325);
+$box-shadow-color-inverse: $text-shadow-color-inverse;
+
+$rotate-left: rotate(-5deg);
+$rotate-right: rotate(5deg);
+
+$header-height: 500px;
+$navbar-height: 68px;
