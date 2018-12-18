@@ -1,0 +1,3 @@
+.btn-complimentary {
+    @include button-variant($complimentary, $secondary, $hover-background: darken($complimentary, 7.5%), $hover-border: darken($secondary, 10%), $active-background: darken($complimentary, 10%), $active-border: darken($secondary, 12.5%))
+}

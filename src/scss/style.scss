@@ -3,4 +3,7 @@
 @import './bootstrap/scss/bootstrap';
 @import './font-awesome/scss/font-awesome';
 
+// Import plugin specific styles
+@import 'plugins/ministry';
+
 @import 'base';

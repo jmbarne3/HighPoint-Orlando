@@ -7,3 +7,4 @@ include_once 'includes/navwalker.php';
 include_once 'includes/media-backgrounds.php';
 include_once 'includes/header-functions.php';
 include_once 'includes/footer-functions.php';
+include_once 'includes/person-functions.php';

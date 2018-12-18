@@ -10,3 +10,19 @@
     font-family: $condensend-font-family !important;
     font-size: 1.3rem;
 }
+
+.block-link {
+    color: $black;
+    transition: color .25s ease;
+
+    &:hover,
+    &:active {
+        color: $complimentary;
+        outline: none;
+        text-decoration: none;
+    }
+}
+
+.text-complimentary {
+    color: $complimentary;
+}
