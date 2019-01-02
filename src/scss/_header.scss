@@ -51,6 +51,10 @@
   right: 0;
   top: 0;
   z-index: 0;
+
+  @include media-breakpoint-up(md) {
+    height: 499px;
+  }
 }
 
 .header-media-background {
