@@ -91,7 +91,7 @@ if ( !function_exists( 'hpo_get_nav_markup' ) ) {
 		$title_elem = ( is_home() || is_front_page() ) ? 'h1' : 'span';
 		$header_img = get_theme_mod( 'navbar_brand_logo', null );
 
-		$title = ( $header_img !== null ) ? '<img src="' . $header_img . '" alt="HighPoint Orlando Logo">' : bloginfo( 'name' );
+		$title = ( $header_img !== null ) ? '<img class="header-logo" src="' . $header_img . '" alt="HighPoint Orlando Logo">' : bloginfo( 'name' );
 
 		ob_start();
 
