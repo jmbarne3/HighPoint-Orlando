@@ -29,7 +29,7 @@ function theme_help() {
         <dd style="margin-left: .5em;">Documentation specifically written for this theme and site. This is a good starting place, and will include the links below throughout various pages of the documentation.</dd>
         <dt><a href="https://getbootstrap.com/docs/4.0/getting-started/introduction/" target="_blank">Bootstrap 4 Documentation</a></dt>
         <dd style="margin-left: .5em;">This theme uses Bootstrap 4 as its underlying CSS framework, so the Bootstrap 4 documentation is very helpful for finding custom components and layout methods.</dd>
-        <dt><a href="https://fontawesome.com/icons" target="_blank">Font Awesome Icons</a></dt>
+        <dt><a href="https://fontawesome.com/v4.7.0/icons/" target="_blank">Font Awesome Icons</a></dt>
         <dd style="margin-left: .5em;">This theme uses Font-Awesome 5 for icons. An icon can be added to any page by adding the icon shortcode. The full list of icons can be found at the link above.</dd>
         <dt><a href="http://wp-events-plugin.com/documentation/" target="_blank">Events Manager Documentation</a></dt>
         <dd style="margin-left: .5em;">The events content type used on this site is provided by the Events Manager plugin. Full documentation can be found at the link above.</dd>
