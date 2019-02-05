@@ -97,7 +97,7 @@ if ( !function_exists( 'hpo_get_nav_markup' ) ) {
 
 		if ( has_nav_menu( 'header-menu' ) ) {
 	?>
-		<nav class="navbar navbar-expand-lg navbar-light bg-light" role="navigation">
+		<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light" role="navigation">
 			<div class="container">
 				<<?php echo $title_elem; ?> class="navbar-brand mb-0">
 					<a class="navbar-brand" href="<?php echo get_home_url(); ?>"><?php echo $title; ?></a>
