@@ -43,13 +43,5 @@ body {
   @include media-breakpoint-up(sm) {
     margin-right: 1.5rem;
   }
-
-  .header-logo {
-    height: 32px;
-
-    @include media-breakpoint-up(sm) {
-      height: auto;
-    }
-  }
 }
 

@@ -134,6 +134,22 @@ function hpo_define_customizer_fields( $wp_customize ) {
 		)
 	);
 
+	$wp_customize->add_setting(
+		'navbar_brand_logo_xs'
+	);
+
+	$wp_customize->add_control(
+		new WP_Customize_Image_Control(
+			$wp_customize,
+			'navbar_brand_logo_xs',
+			array(
+				'label'       => 'Navbar Brand Logo (Mobile)',
+				'description' => 'Image that appears in the header navbar on mobile devices.',
+				'section'     => HPO_THEME_CUSTOMIZER_PREFIX . 'nav_settings'
+			)
+		)
+	);
+
 	// Analytics
 	$wp_customize->add_setting(
 		'gw_verify'

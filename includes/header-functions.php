@@ -89,9 +89,7 @@ function hpo_get_header_images( $obj ) {
 if ( !function_exists( 'hpo_get_nav_markup' ) ) {
 	function hpo_get_nav_markup( $image=true ) {
 		$title_elem = ( is_home() || is_front_page() ) ? 'h1' : 'span';
-		$header_img = get_theme_mod( 'navbar_brand_logo', null );
-
-		$title = ( $header_img !== null ) ? '<img class="header-logo" src="' . $header_img . '" alt="HighPoint Orlando Logo">' : bloginfo( 'name' );
+		$title = get_brand_heading();
 
 		ob_start();
 
@@ -126,6 +124,31 @@ if ( !function_exists( 'hpo_get_nav_markup' ) ) {
 		</nav>
 	<?php
 		}
+
+		return ob_get_clean();
+	}
+}
+
+if ( ! function_exists( 'get_brand_heading' ) ) {
+	function get_brand_heading() {
+		$header_img = get_theme_mod( 'navbar_brand_logo', null );
+		$header_img_xs = get_theme_mod( 'navbar_brand_logo_xs', null );
+
+		ob_start();
+
+		if ( $header_img_xs && $header_img ) :
+?>
+		<picture>
+			<source srcset="<?php echo $header_img; ?>" media="(min-width: 576px)">
+			<img class="header-logo" src="<?php echo $header_img_xs; ?>" alt="<?php echo bloginfo( 'name' ); ?>">
+		</picture>
+<?php
+		elseif ( $header_img ) :
+?>
+		<img class="header-logo" src="<?php echo $header_img; ?>" alt="<?php echo bloginfo( 'name' ); ?>">
+<?php
+		else : echo bloginfo( 'name' );
+		endif;
 
 		return ob_get_clean();
 	}
