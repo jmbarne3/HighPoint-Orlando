@@ -188,3 +188,14 @@
     padding: .55rem .7rem;
   }
 }
+
+// Admin bar overrides
+.admin-bar {
+  .site-header {
+    margin-top: 32px;
+  }
+
+  .navbar.fixed-top {
+    top: 32px;
+  }
+}
