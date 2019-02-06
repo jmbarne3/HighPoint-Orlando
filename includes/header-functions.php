@@ -2,6 +2,19 @@
 /**
  * Header Related Functions
  **/
+function hpo_get_header_classes() {
+	global $post;
+
+	$header    = get_field( 'page_header_image', $post->ID );
+	$header_xs = get_field( 'page_header_image_xs', $post->ID );
+
+	if ( $header || $header_xs ) {
+		return ' with-image';
+	}
+
+	return '';
+}
+
 
 /**
  * Gets the header image for pages and taxonomy terms that have page header

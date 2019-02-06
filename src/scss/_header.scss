@@ -189,10 +189,26 @@
   }
 }
 
+.site-header {
+  margin-top: 85px;
+
+  @include media-breakpoint-up(sm) {
+    margin-top: 132px;
+  }
+
+  &.with-image {
+    margin-top: auto;
+  }
+}
+
 // Admin bar overrides
 .admin-bar {
   .site-header {
-    margin-top: 32px;
+    margin-top: 84px;
+
+    &.with-image {
+      margin-top: auto;
+    }
   }
 
   .navbar.fixed-top {
