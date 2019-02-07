@@ -12,6 +12,8 @@ if ( ! function_exists( 'hpo_add_style_select' ) ) {
      */
     function hpo_add_style_select( $buttons ) {
         array_unshift( $buttons, 'styleselect' );
+        array_push( $buttons, 'map-embed' );
+        array_push( $buttons, 'directions-button' );
         return $buttons;
     }
 
@@ -52,6 +54,9 @@ if ( ! function_exists( 'hpo_custom_styles' ) ) {
         );
 
         $init_array['style_formats'] = json_encode( $style_formats );
+
+        // Add support for empty spans
+        $init_array['extended_valid_elements'] = 'span[class]';
 
         return $init_array;
     }

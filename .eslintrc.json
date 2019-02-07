@@ -10,7 +10,8 @@
   "globals": {
       "Cookies": true,
       "UCFWP": true,
-      "Bloodhound": true
+      "Bloodhound": true,
+      "tinymce": true
   },
   "extends": "eslint:recommended",
   "parserOptions": {

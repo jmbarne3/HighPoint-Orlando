@@ -2,12 +2,19 @@
 /**
  * Handles admin functions
  */
-function hpo_enqueue_admin_assets( $stylesheets ) {
+function hpo_enqueue_editor_assets() {
     add_editor_style( 'static/css/hpo-editor.min.css' );
     add_editor_style( 'https://fonts.googleapis.com/css?family=Montserrat|Open+Sans+Condensed:300|Oswald' );
 }
 
-add_action( 'admin_init', 'hpo_enqueue_admin_assets' );
+add_action( 'admin_init', 'hpo_enqueue_editor_assets' );
+
+function hpo_enqueue_admin_assets() {
+    wp_register_style( 'hpo-tinymce-buttons', get_template_directory_uri() . '/static/css/admin.min.css', false );
+    wp_enqueue_style( 'hpo-tinymce-buttons' );
+}
+
+add_action( 'admin_enqueue_scripts', 'hpo_enqueue_admin_assets' );
 
 /**
  * Adds the help screen.
@@ -41,3 +48,13 @@ function theme_help() {
     </dl>
 <?php
 }
+
+function add_custom_tinymce_plugins( $plugins ) {
+    $theme_uri = get_template_directory_uri();
+    $plugins['directions-button'] = "$theme_uri/static/js/directions-button.min.js";
+    $plugins['map-embed'] = "$theme_uri/static/js/map-embed.min.js";
+
+    return $plugins;
+}
+
+add_filter( 'mce_external_plugins', 'add_custom_tinymce_plugins' );

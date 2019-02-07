@@ -96,8 +96,12 @@ gulp.task('scss-build-editor', () => {
   return buildCSS(`${config.src.scssPath}/hpo-editor.scss`);
 });
 
+gulp.task('scss-build-admin', () => {
+  return buildCSS(`${config.src.scssPath}/admin.scss`);
+});
+
 // All theme css-related tasks
-gulp.task('css', gulp.series('scss-lint-theme', 'scss-build-theme', 'scss-build-editor'));
+gulp.task('css', gulp.series('scss-lint-theme', 'scss-build-theme', 'scss-build-editor', 'scss-build-admin'));
 
 
 //
@@ -128,8 +132,32 @@ gulp.task('js-build', () => {
     .pipe(gulp.dest(config.dist.jsPath));
 });
 
+gulp.task('js-directions', () => {
+  return gulp.src(`${config.src.jsPath}/directions-button.js`)
+    .pipe(include({
+      includePaths: [config.packagesPath, config.src.jsPath]
+    }))
+    .on('error', console.log) // eslint-disable-line no-console
+    .pipe(babel())
+    .pipe(uglify())
+    .pipe(rename('directions-button.min.js'))
+    .pipe(gulp.dest(config.dist.jsPath));
+});
+
+gulp.task('js-map-embed', () => {
+  return gulp.src(`${config.src.jsPath}/map-embed.js`)
+    .pipe(include({
+      includePaths: [config.packagesPath, config.src.jsPath]
+    }))
+    .on('error', console.log) // eslint-disable-line no-console
+    .pipe(babel())
+    .pipe(uglify())
+    .pipe(rename('map-embed.min.js'))
+    .pipe(gulp.dest(config.dist.jsPath));
+});
+
 // All js-related tasks
-gulp.task('js', gulp.series('es-lint', 'js-build'));
+gulp.task('js', gulp.series('es-lint', 'js-build', 'js-directions', 'js-map-embed'));
 
 
 //

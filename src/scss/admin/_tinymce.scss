@@ -1,0 +1,18 @@
+.mce-i-directions,
+.mce-i-map {
+    display: inline-block;
+    font-family: "FontAwesome" !important;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.mce-i-directions::before {
+    content: "\f14e";
+}
+
+.mce-i-map::before {
+    content: "\f279";
+}
