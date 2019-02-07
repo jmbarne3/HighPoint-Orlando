@@ -3,7 +3,8 @@
  * Handles admin functions
  */
 function hpo_enqueue_admin_assets( $stylesheets ) {
-    //add_editor_style( 'static/css/editor.min.css' );
+    add_editor_style( 'static/css/hpo-editor.min.css' );
+    add_editor_style( 'https://fonts.googleapis.com/css?family=Montserrat|Open+Sans+Condensed:300|Oswald' );
 }
 
 add_action( 'admin_init', 'hpo_enqueue_admin_assets' );

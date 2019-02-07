@@ -1,0 +1,34 @@
+/**
+ * All button styles for the editor
+ **/
+.btn {
+    display: inline-block;
+    font-weight: $btn-font-weight;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    border: $btn-border-width solid transparent;
+    @include button-size($btn-padding-y, $btn-padding-x, $font-size-base, $btn-line-height, $btn-border-radius);
+    @include transition($btn-transition);
+
+    &:focus,
+    &.focus {
+        outline: 0;
+        box-shadow: $btn-focus-box-shadow;
+    }
+
+    &:not(:disabled):not(.disabled):active,
+    &:not(:disabled):not(.disabled).active {
+        @include box-shadow($btn-active-box-shadow);
+
+        &:focus {
+            @include box-shadow($btn-focus-box-shadow, $btn-active-box-shadow);
+        }
+    }
+}
+
+@each $name, $color in $theme-colors {
+    .btn-#{$name} {
+        @include button-variant($color, $color, $hover-background: darken($color, 7.5%), $hover-border: darken($color, 10%), $active-background: darken($color, 10%), $active-border: darken($color, 12.5%));
+    }
+}

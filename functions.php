@@ -10,3 +10,4 @@ include_once 'includes/footer-functions.php';
 include_once 'includes/person-functions.php';
 include_once 'includes/admin-functions.php';
 include_once 'includes/plugin-filters.php';
+include_once 'includes/wysiwyg-functions.php';

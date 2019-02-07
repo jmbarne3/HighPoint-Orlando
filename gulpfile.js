@@ -93,7 +93,7 @@ gulp.task('scss-build-theme', () => {
 });
 
 gulp.task('scss-build-editor', () => {
-  return buildCSS(`${config.src.scssPath}/editor.scss`);
+  return buildCSS(`${config.src.scssPath}/hpo-editor.scss`);
 });
 
 // All theme css-related tasks
