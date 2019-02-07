@@ -34,43 +34,6 @@ function hpo_init() {
 	add_image_size( 'bg-img-xl', 1600, 2000, true );
 
 	register_nav_menu( 'header-menu', __( 'Header Menu' ) );
-
-	register_sidebar( array(
-		'name'          => __( 'Footer - Column 1' ),
-		'id'            => 'footer-col-1',
-		'description'   => 'First column in the site footer, on the bottom of pages.',
-		'before_widget' => '<div id="%1$s" class="widget mb-5 %2$s">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h2 class="h6 heading-underline letter-spacing-3">',
-		'after_title'   => '</h2>',
-	) );
-	register_sidebar( array(
-		'name'          => __( 'Footer - Column 2' ),
-		'id'            => 'footer-col-2',
-		'description'   => 'Second column in the site footer, on the bottom of pages.',
-		'before_widget' => '<div id="%1$s" class="widget mb-5 %2$s">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h2 class="h6 heading-underline letter-spacing-3">',
-		'after_title'   => '</h2>',
-	) );
-	register_sidebar( array(
-		'name'          => __( 'Footer - Column 3' ),
-		'id'            => 'footer-col-3',
-		'description'   => 'Third column in the site footer, on the bottom of pages.',
-		'before_widget' => '<div id="%1$s" class="widget mb-5 %2$s">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h2 class="h6 heading-underline letter-spacing-3">',
-		'after_title'   => '</h2>',
-	) );
-	register_sidebar( array(
-		'name'          => __( 'Footer - Column 4' ),
-		'id'            => 'footer-col-4',
-		'description'   => 'Last column in the site footer, on the bottom of pages.',
-		'before_widget' => '<div id="%1$s" class="widget mb-5 %2$s">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h2 class="h6 heading-underline letter-spacing-3">',
-		'after_title'   => '</h2>',
-	) );
 }
 
 add_action( 'after_setup_theme', 'hpo_init' );
@@ -89,9 +52,9 @@ function hpo_define_customizer_sections( $wp_customize ) {
 	);
 
 	$wp_customize->add_section(
-		HPO_THEME_CUSTOMIZER_PREFIX . 'webfonts',
+		HPO_THEME_CUSTOMIZER_PREFIX . 'googlemaps',
 		array(
-			'title' => 'Web Fonts'
+			'title' => 'Google Maps'
 		)
 	);
 
@@ -147,6 +110,21 @@ function hpo_define_customizer_fields( $wp_customize ) {
 				'description' => 'Image that appears in the header navbar on mobile devices.',
 				'section'     => HPO_THEME_CUSTOMIZER_PREFIX . 'nav_settings'
 			)
+		)
+	);
+
+	// Google Maps
+	$wp_customize->add_setting(
+		'google_maps_key'
+	);
+
+	$wp_customize->add_control(
+		'google_maps_key',
+		array(
+			'type'        => 'text',
+			'label'       => 'Google Maps API Key',
+			'description' => 'A Google API Key with the Google Maps Embed API enabled.',
+			'section'     => HPO_THEME_CUSTOMIZER_PREFIX . 'googlemaps'
 		)
 	);
 

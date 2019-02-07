@@ -29,7 +29,7 @@ tinymce.PluginManager.add('map-embed', (editor) => {
           const address = e.data.address.replace(/[ ,.]/gi, '+').replace('++', '+');
           const width = e.data.width || 600;
           const height = e.data.height || 400;
-          editor.insertContent(`<iframe src="https://www.google.com/maps/embed/v1/place?q=${address}&key=AIzaSyDFeIscDPUnxhQG0rUknxij-JNOmNEJifc" width="${width}" height="${height}" frameborder="0" style="border:0" allowfullscreen></iframe>`);
+          editor.insertContent(`<iframe src="https://www.google.com/maps/embed/v1/place?q=${address}&key=${HPO_CONSTANTS.google_maps_api_key}" width="${width}" height="${height}" frameborder="0" style="border:0" allowfullscreen></iframe>`);
         }
       });
     }

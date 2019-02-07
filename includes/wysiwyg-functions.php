@@ -11,8 +11,12 @@ if ( ! function_exists( 'hpo_add_style_select' ) ) {
      * @return array
      */
     function hpo_add_style_select( $buttons ) {
+        $google_maps_api_key = get_theme_mod( 'google_maps_key' );
+
         array_unshift( $buttons, 'styleselect' );
-        array_push( $buttons, 'map-embed' );
+        if ( $google_maps_api_key ) {
+            array_push( $buttons, 'map-embed' );
+        }
         array_push( $buttons, 'directions-button' );
         return $buttons;
     }

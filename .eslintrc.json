@@ -11,7 +11,8 @@
       "Cookies": true,
       "UCFWP": true,
       "Bloodhound": true,
-      "tinymce": true
+      "tinymce": true,
+      "HPO_CONSTANTS": true
   },
   "extends": "eslint:recommended",
   "parserOptions": {

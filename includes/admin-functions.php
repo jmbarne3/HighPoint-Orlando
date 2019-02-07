@@ -16,6 +16,22 @@ function hpo_enqueue_admin_assets() {
 
 add_action( 'admin_enqueue_scripts', 'hpo_enqueue_admin_assets' );
 
+function localize_tinymce_plugins() {
+    $google_maps_api_key = get_theme_mod( 'google_maps_key' );
+    if ( $google_maps_api_key ) :
+?>
+    <script type="text/javascript">
+    var HPO_CONSTANTS = {
+        'google_maps_api_key': '<?php echo $google_maps_api_key; ?>'
+    };
+    </script>
+<?php
+    endif;
+}
+
+add_action( 'admin_head-post.php', 'localize_tinymce_plugins' );
+add_action( 'admin_head-post-new.php', 'localize_tinymce_plugins' );
+
 /**
  * Adds the help screen.
  */
@@ -50,9 +66,14 @@ function theme_help() {
 }
 
 function add_custom_tinymce_plugins( $plugins ) {
+    $google_maps_api_key = get_theme_mod( 'google_maps_key' );
+
     $theme_uri = get_template_directory_uri();
     $plugins['directions-button'] = "$theme_uri/static/js/directions-button.min.js";
-    $plugins['map-embed'] = "$theme_uri/static/js/map-embed.min.js";
+
+    if ( $google_maps_api_key ) {
+        $plugins['map-embed'] = "$theme_uri/static/js/map-embed.min.js";
+    }
 
     return $plugins;
 }
