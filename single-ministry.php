@@ -14,11 +14,11 @@
 					echo apply_filters( 'the_content', $post->ministry_meeting_times );
 				endif;
 
-				if ( $post->ministry_special_event ) :
+				if ( $post->ministry_special_event_tag ) :
 				?>
 				<h2 class="h3 mb-3 text-complimentary">Upcoming Events</h2>
 				<?php
-					echo do_shortcode( "[events_list category='$post->ministry_special_event']" );
+					echo do_shortcode( "[events_list tag='$post->ministry_special_event_tag']" );
 				endif;
 
 				if ( $post->ministry_leader ) :
