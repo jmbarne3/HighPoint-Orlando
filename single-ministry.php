@@ -8,9 +8,6 @@
 			<aside class="col-12 col-md-4">
 				<?php
 				if ( $post->ministry_meeting_times ) :
-				?>
-				<h2 class="h3 mb-3 text-complimentary">Meeting Times</h2>
-				<?php
 					echo apply_filters( 'the_content', $post->ministry_meeting_times );
 				endif;
 
