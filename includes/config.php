@@ -34,6 +34,16 @@ function hpo_init() {
 	add_image_size( 'bg-img-xl', 1600, 2000, true );
 
 	register_nav_menu( 'header-menu', __( 'Header Menu' ) );
+
+	register_sidebar( array(
+		'name'          => __( 'Footer' ),
+		'id'            => 'footer',
+		'description'   => 'The footer area.',
+		'before_widget' => '<div id="%1$s" class="widget mb-5 %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h2 class="h6 heading-underline letter-spacing-3">',
+		'after_title'   => '</h2>',
+	) );
 }
 
 add_action( 'after_setup_theme', 'hpo_init' );
