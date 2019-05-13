@@ -3,13 +3,13 @@
 }
 
 .alignleft {
-    @extend .float-left;
+    @extend .float-sm-left;
 }
 
 .alignright {
-    @extend .float-right;
+    @extend .float-sm-right;
 }
 
 .aligncenter {
-    @extend .mx-auto;
+    @extend .mx-sm-auto;
 }

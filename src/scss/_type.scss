@@ -1,28 +1,89 @@
 .font-family-sans-serif {
-    font-family: $font-family-sans-serif !important;
+  font-family: $font-family-sans-serif !important;
 }
 
 .font-family-sans-serif-round {
-    font-family: $headings-font-family !important;
+  font-family: $headings-font-family !important;
 }
 
 .font-family-condensed {
-    font-family: $condensend-font-family !important;
-    font-size: 1.3rem;
+  font-family: $condensend-font-family !important;
+  font-size: 1.3rem;
 }
 
 .block-link {
-    color: $black;
-    transition: color .25s ease;
+  color: $black;
+  transition: color .25s ease;
 
-    &:hover,
-    &:active {
-        color: $complimentary;
-        outline: none;
-        text-decoration: none;
-    }
+  &:hover,
+  &:active {
+    color: $complimentary;
+    outline: none;
+    text-decoration: none;
+  }
 }
 
 .text-complimentary {
+  color: $complimentary;
+}
+
+//
+// Blockquotes
+//
+
+.blockquote-reverse {
+  padding-right: 0;
+
+  .blockquote-footer {
+    &::after {
+      content: '';
+    }
+  }
+}
+
+%blockquote-quotation {
+  padding-bottom: 1em;
+  padding-left: 2.75em;
+  padding-right: 0;
+  padding-top: 1.5em;
+  position: relative;
+  z-index: 0;
+
+  @include media-breakpoint-up(md) {
+    padding-left: 3.75em;
+    padding-top: 2em;
+  }
+
+  &::before {
+    content: '“';
+    font-family: $blockquote-quotation-mark-font-family;
+    font-size: 5.25em;
+    font-style: normal;
+    font-weight: 600;
+    left: -0.5em;
+    line-height: 0;
+    position: absolute;
+    top: .575em;
+    z-index: -1;
+
+    @include media-breakpoint-up(md) {
+      top: .65em;
+    }
+  }
+}
+
+.blockquote-quotation {
+  @extend %blockquote-quotation;
+
+  &::before {
     color: $complimentary;
+  }
+}
+
+.blockquote-quotation-inverse {
+  @extend %blockquote-quotation;
+
+  &::before {
+    color: $secondary;
+  }
 }

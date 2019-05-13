@@ -1,0 +1,27 @@
+.wp-caption {
+  &.alignleft {
+    margin-right: 1rem;
+  }
+
+  &.alignright {
+    margin-left: 1rem;
+  }
+
+  &.aligncenter {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  &.alignleft,
+  &.alignright,
+  &.aligncenter {
+    margin-bottom: 1rem;
+  }
+
+  .wp-caption-text {
+    @extend .text-muted;
+    font-size: .9em;
+    margin-top: .5rem;
+    text-align: center;
+  }
+}

@@ -395,9 +395,27 @@ if ( !function_exists( 'hpo_get_header_default_markup' ) ) {
 			<h1 class="<?php echo $title_classes; ?>">
 				<?php echo $title; ?>
 			</h1>
+			<?php if ( isset( $obj->post_type ) && $obj->post_type === 'post' ) : ?>
+				<?php echo hpo_get_post_subtitle_markup( $obj ); ?>
+			<?php endif; ?>
 		</div>
 		<?php endif; ?>
 	<?php
+		return ob_get_clean();
+	}
+}
+
+if ( ! function_exists( 'hpo_get_post_subtitle_markup' ) ) {
+	function hpo_get_post_subtitle_markup( $obj ) {
+		$author_id = get_field( 'post_author', $obj->ID );
+		$author = get_post( $author_id );
+
+		ob_start();
+	?>
+		<p><small>Published <time datetime="<?php echo $obj->post_date; ?>"><?php echo $obj->post_date; ?></time></small></p>
+		<p><small>By <?php echo $author->post_title; ?></small></p>
+	<?php
+
 		return ob_get_clean();
 	}
 }

@@ -36,6 +36,16 @@ function hpo_init() {
 	register_nav_menu( 'header-menu', __( 'Header Menu' ) );
 
 	register_sidebar( array(
+		'name'          => __( 'Post Sidebar' ),
+		'id'            => 'post_sidebar',
+		'description'   => 'The sidebar displayed on individual posts.',
+		'before_widget' => '<div id="%1$s" class="widget mb-5 %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h2 class="h5 text-uppercase">',
+		'after_title'   => '</h2>'
+	) );
+
+	register_sidebar( array(
 		'name'          => __( 'Footer' ),
 		'id'            => 'footer',
 		'description'   => 'The footer area.',
